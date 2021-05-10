@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.2](https://github.com/chatscope/use-chat/compare/v1.0.1...v1.0.2) (2021-05-10)
+
+
+### Bug Fixes
+
+* **provider:** wrapped api methods in useCallback for referential equality ([9f7b7b9](https://github.com/chatscope/use-chat/commit/9f7b7b93f67fb1674202894589cce84027380d34))
+
 ## [1.0.1](https://github.com/chatscope/use-chat/compare/v1.0.0...v1.0.1) (2021-05-10)
 
 
