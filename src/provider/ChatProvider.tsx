@@ -315,172 +315,207 @@ export const ChatProvider = <S extends IChatService>({
     typingThrottleTime
   );
 
-  const setCurrentUser = (user: User): void => {
-    storage.setCurrentUser(user);
-    updateState();
-  };
+  const setCurrentUser = useCallback(
+    (user: User): void => {
+      storage.setCurrentUser(user);
+      updateState();
+    },
+    [updateState]
+  );
 
-  const addUser = (user: User): boolean => {
-    const result = storage.addUser(user);
-    updateState();
-    return result;
-  };
+  const addUser = useCallback(
+    (user: User): boolean => {
+      const result = storage.addUser(user);
+      updateState();
+      return result;
+    },
+    [updateState]
+  );
 
-  const removeUser = (userId: UserId) => {
-    const result = storage.removeUser(userId);
-    updateState();
-    return result;
-  };
+  const removeUser = useCallback(
+    (userId: UserId) => {
+      const result = storage.removeUser(userId);
+      updateState();
+      return result;
+    },
+    [updateState]
+  );
 
   /**
    * Get user by id
    * @param userId
    */
-  const getUser = (userId: UserId) => storage.getUser(userId)[0];
+  const getUser = useCallback(
+    (userId: UserId) => storage.getUser(userId)[0],
+    []
+  );
 
   /**
    * Set active conversation
    * @param {String} conversationId Conversation id
    */
-  const setActiveConversation = (
-    conversationId?: ConversationId,
-    draftOpt: AutoDraft = autoDraft
-  ) => {
-    const { currentMessage } = storage.getState();
+  const setActiveConversation = useCallback(
+    (conversationId?: ConversationId, draftOpt: AutoDraft = autoDraft) => {
+      const { currentMessage } = storage.getState();
 
-    // Save draft for the current conversation
-    if (draftOpt & AutoDraft.Save) {
-      storage.setDraft(currentMessage);
-    }
+      // Save draft for the current conversation
+      if (draftOpt & AutoDraft.Save) {
+        storage.setDraft(currentMessage);
+      }
 
-    storage.setActiveConversation(conversationId);
+      storage.setActiveConversation(conversationId);
 
-    // Set current message input value to the draft from current conversation
-    // And reset draft
-    if (conversationId) {
-      const [activeConversation] = storage.getConversation(conversationId);
-      if (activeConversation) {
-        // Restore draft from new conversation to message input
-        if (draftOpt & AutoDraft.Restore) {
-          storage.setCurrentMessage(activeConversation.draft ?? "");
-          activeConversation.draft = "";
+      // Set current message input value to the draft from current conversation
+      // And reset draft
+      if (conversationId) {
+        const [activeConversation] = storage.getConversation(conversationId);
+        if (activeConversation) {
+          // Restore draft from new conversation to message input
+          if (draftOpt & AutoDraft.Restore) {
+            storage.setCurrentMessage(activeConversation.draft ?? "");
+            activeConversation.draft = "";
+          }
         }
       }
-    }
 
-    updateState();
-  };
+      updateState();
+    },
+    [updateState]
+  );
 
-  const getConversation = (conversationId: ConversationId) =>
-    storage.getConversation(conversationId)[0];
+  const getConversation = useCallback(
+    (conversationId: ConversationId) =>
+      storage.getConversation(conversationId)[0],
+    []
+  );
 
   /**
    * Sends message to active conversation
    */
-  const sendMessage = ({
-    message,
-    conversationId,
-    senderId,
-    generateId = storage.messageIdGenerator ? true : false,
-    clearMessageInput = true,
-  }: SendMessageParams) => {
-    const storedMessage = storage.addMessage(
+  const sendMessage = useCallback(
+    ({
       message,
       conversationId,
-      generateId
-    );
+      senderId,
+      generateId = storage.messageIdGenerator ? true : false,
+      clearMessageInput = true,
+    }: SendMessageParams) => {
+      const storedMessage = storage.addMessage(
+        message,
+        conversationId,
+        generateId
+      );
 
-    if (clearMessageInput) {
-      storage.setCurrentMessage("");
-    }
+      if (clearMessageInput) {
+        storage.setCurrentMessage("");
+      }
 
-    updateState();
+      updateState();
 
-    serviceRef.current.sendMessage({ message: storedMessage, conversationId });
-  };
+      serviceRef.current.sendMessage({
+        message: storedMessage,
+        conversationId,
+      });
+    },
+    [updateState, serviceRef]
+  );
 
   /**
-   * Adds message without sending it
+   * Adds a message without sending it
    * @param message
    * @param conversationId
    * @param generateId
    */
-  const addMessage = (
-    message: ChatMessage<MessageContentType>,
-    conversationId: ConversationId,
-    generateId: boolean
-  ) => {
-    storage.addMessage(message, conversationId, generateId);
-    updateState();
-  };
+  const addMessage = useCallback(
+    (
+      message: ChatMessage<MessageContentType>,
+      conversationId: ConversationId,
+      generateId: boolean
+    ) => {
+      storage.addMessage(message, conversationId, generateId);
+      updateState();
+    },
+    [updateState]
+  );
 
   /**
    * Update message
    * @param message
    * @param index
    */
-  const updateMessage = (message: ChatMessage<MessageContentType>) => {
-    storage.updateMessage(message);
-    updateState();
-  };
+  const updateMessage = useCallback(
+    (message: ChatMessage<MessageContentType>) => {
+      storage.updateMessage(message);
+      updateState();
+    },
+    [updateState]
+  );
 
   /**
    * Set draft of message in current conversation
    * @param {String} draft
    */
-  const setDraft = (draft: string) => {
-    storage.setDraft(draft);
-    updateState();
-  };
+  const setDraft = useCallback(
+    (draft: string) => {
+      storage.setDraft(draft);
+      updateState();
+    },
+    [updateState]
+  );
 
   /**
    * Add conversation to collection
    * @param c
    */
-  const addConversation = (c: Conversation) => {
-    storage.addConversation(c);
-    updateState();
-  };
+  const addConversation = useCallback(
+    (c: Conversation) => {
+      storage.addConversation(c);
+      updateState();
+    },
+    [updateState]
+  );
 
-  const resetState = () => {
+  const resetState = useCallback(() => {
     storage.resetState();
     updateState();
-  };
+  }, [updateState]);
 
   /**
    * Sends typing to active conversation
    * @param {Object} options Options object
    */
-  const sendTyping = ({
-    content = "",
-    isTyping = true,
-    throttle = true,
-  }: SendTypingParams) => {
-    const { activeConversation, currentUser } = storage.getState();
-    if (activeConversation && currentUser) {
-      const params = {
-        content,
-        isTyping,
-        userId: currentUser.id,
-        conversationId: activeConversation.id,
-      };
+  const sendTyping = useCallback(
+    ({ content = "", isTyping = true, throttle = true }: SendTypingParams) => {
+      const { activeConversation, currentUser } = storage.getState();
+      if (activeConversation && currentUser) {
+        const params = {
+          content,
+          isTyping,
+          userId: currentUser.id,
+          conversationId: activeConversation.id,
+        };
 
-      if (throttle) {
-        throttledSendTyping(params);
-      } else {
-        serviceRef.current.sendTyping(params);
+        if (throttle) {
+          throttledSendTyping(params);
+        } else {
+          serviceRef.current.sendTyping(params);
+        }
       }
-    }
-  };
+    },
+    []
+  );
 
   /**
    * Set current  message input value
    * @param message
    */
-  const setCurrentMessage = (message: string) => {
-    storage.setCurrentMessage(message);
-    updateState();
-  };
+  const setCurrentMessage = useCallback(
+    (message: string) => {
+      storage.setCurrentMessage(message);
+      updateState();
+    },
+    [updateState]
+  );
 
   return (
     <ChatContext.Provider
