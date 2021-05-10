@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.1](https://github.com/chatscope/use-chat/compare/v1.0.0...v1.0.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* **fake:** don't want to fight with npm ([4b072f7](https://github.com/chatscope/use-chat/commit/4b072f72f60c622cd2edc06e604a44d9e7f1a96d))
+
 # 1.0.0 (2021-05-10)
 
 
