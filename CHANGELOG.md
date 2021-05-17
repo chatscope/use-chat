@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.4](https://github.com/chatscope/use-chat/compare/v1.0.3...v1.0.4) (2021-05-17)
+
+
+### Bug Fixes
+
+* **provider:** allow empty children ([9b1a97e](https://github.com/chatscope/use-chat/commit/9b1a97edd70115a29a942ebf8d4a5b3239e5f5cf))
+
 ## [1.0.3](https://github.com/chatscope/use-chat/compare/v1.0.2...v1.0.3) (2021-05-17)
 
 
