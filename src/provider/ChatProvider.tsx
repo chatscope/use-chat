@@ -127,7 +127,7 @@ export const useChat = (): ChatContextProps => {
   const context = useContext(ChatContext);
 
   if (!context) {
-    throw new Error("useChatContext must be within ChatProvider");
+    throw new Error("useChat must be within ChatProvider");
   }
 
   return context;
