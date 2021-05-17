@@ -275,7 +275,7 @@ export interface ChatProviderProps<S extends IChatService> {
   serviceFactory: ChatServiceFactory<S>;
   storage: IStorage;
   config: ChatProviderConfig;
-  children: ReactChild | ReactChildren;
+  children?: ReactChild | ReactChildren;
 }
 
 /**
