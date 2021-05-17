@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.3](https://github.com/chatscope/use-chat/compare/v1.0.2...v1.0.3) (2021-05-17)
+
+
+### Bug Fixes
+
+* **provider:** error message ([09b7e05](https://github.com/chatscope/use-chat/commit/09b7e05170d062af65bb427563d806fbe1da718f))
+
 ## [1.0.2](https://github.com/chatscope/use-chat/compare/v1.0.1...v1.0.2) (2021-05-10)
 
 
