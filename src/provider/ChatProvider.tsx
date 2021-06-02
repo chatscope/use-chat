@@ -152,7 +152,7 @@ const useStorage = (
 ) => {
   const updateState = useCallback(() => {
     setter(storage.getState());
-  }, [setter]);
+  }, [setter,storage]);
 
   const debouncedTyping = useDebounceTyping(
     typingDebounceTime,
