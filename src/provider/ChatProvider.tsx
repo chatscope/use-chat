@@ -347,7 +347,7 @@ export const ChatProvider = <S extends IChatService>({
    */
   const getUser = useCallback(
     (userId: UserId) => storage.getUser(userId)[0],
-    []
+    [storage]
   );
 
   /**
@@ -386,7 +386,7 @@ export const ChatProvider = <S extends IChatService>({
   const getConversation = useCallback(
     (conversationId: ConversationId) =>
       storage.getConversation(conversationId)[0],
-    []
+    [storage]
   );
 
   /**
@@ -502,7 +502,7 @@ export const ChatProvider = <S extends IChatService>({
         }
       }
     },
-    []
+    [storage]
   );
 
   /**
