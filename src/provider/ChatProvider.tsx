@@ -1,6 +1,4 @@
 import React, {
-  ReactChild,
-  ReactChildren,
   createContext,
   useCallback,
   useContext,
@@ -8,20 +6,21 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
+import type { ReactChild, ReactChildren } from "react";
+import type {
   ChatServiceFactory,
   ChatState,
   ConversationId,
   SendTypingServiceParams,
   UserId,
 } from "../Types";
-import { IChatService, IStorage } from "../interfaces";
+import type { IChatService, IStorage } from "../interfaces";
 import PropTypes from "prop-types";
-import { ChatEventType, MessageContentType } from "../enums";
-import { Conversation } from "../Conversation";
-import { User } from "../User";
-import { ChatMessage } from "../ChatMessage";
-import {
+import { AutoDraft, ChatEventType, MessageContentType } from "../enums";
+import type { Conversation } from "../Conversation";
+import type { User } from "../User";
+import type { ChatMessage } from "../ChatMessage";
+import type {
   MessageEvent,
   UserPresenceChangedEvent,
   UserTypingEvent,
@@ -29,8 +28,7 @@ import {
 import { TypingUser } from "../TypingUser";
 import { useThrottledSendTyping } from "./useThrottledSendTyping";
 import { useDebounceTyping } from "./useDebounceTyping";
-import { MessageGroup } from "../MessageGroup";
-import { AutoDraft } from "../enums/AutoDraft";
+import type { MessageGroup } from "../MessageGroup";
 
 export interface SendMessageParams {
   message: ChatMessage<MessageContentType>;
@@ -152,7 +150,7 @@ const useStorage = (
 ) => {
   const updateState = useCallback(() => {
     setter(storage.getState());
-  }, [setter]);
+  }, [setter, storage]);
 
   const debouncedTyping = useDebounceTyping(
     typingDebounceTime,
@@ -243,7 +241,7 @@ const useStorage = (
 
       service.on(ChatEventType.UserTyping, onUserTyping);
     };
-  }, [storage, service, updateState]);
+  }, [storage, service, updateState, debounceTyping, debouncedTyping]);
 };
 
 const useChatSelector = ({
@@ -295,7 +293,7 @@ export const ChatProvider = <S extends IChatService>({
     autoDraft = AutoDraft.Save | AutoDraft.Restore,
   },
   children,
-}: ChatProviderProps<S>) => {
+}: ChatProviderProps<S>): JSX.Element => {
   const [state, setState] = useState(storage.getState());
 
   const updateState = useCallback(() => {
@@ -320,7 +318,7 @@ export const ChatProvider = <S extends IChatService>({
       storage.setCurrentUser(user);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   const addUser = useCallback(
@@ -329,7 +327,7 @@ export const ChatProvider = <S extends IChatService>({
       updateState();
       return result;
     },
-    [updateState]
+    [storage, updateState]
   );
 
   const removeUser = useCallback(
@@ -338,17 +336,16 @@ export const ChatProvider = <S extends IChatService>({
       updateState();
       return result;
     },
-    [updateState]
+    [storage, updateState]
   );
 
   /**
    * Get user by id
    * @param userId
    */
-  const getUser = useCallback(
-    (userId: UserId) => storage.getUser(userId)[0],
-    []
-  );
+  const getUser = useCallback((userId: UserId) => storage.getUser(userId)[0], [
+    storage,
+  ]);
 
   /**
    * Set active conversation
@@ -380,13 +377,13 @@ export const ChatProvider = <S extends IChatService>({
 
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   const getConversation = useCallback(
     (conversationId: ConversationId) =>
       storage.getConversation(conversationId)[0],
-    []
+    [storage]
   );
 
   /**
@@ -417,7 +414,7 @@ export const ChatProvider = <S extends IChatService>({
         conversationId,
       });
     },
-    [updateState, serviceRef]
+    [storage, updateState, serviceRef]
   );
 
   /**
@@ -435,7 +432,7 @@ export const ChatProvider = <S extends IChatService>({
       storage.addMessage(message, conversationId, generateId);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   /**
@@ -448,7 +445,7 @@ export const ChatProvider = <S extends IChatService>({
       storage.updateMessage(message);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   /**
@@ -460,7 +457,7 @@ export const ChatProvider = <S extends IChatService>({
       storage.setDraft(draft);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   /**
@@ -472,13 +469,13 @@ export const ChatProvider = <S extends IChatService>({
       storage.addConversation(c);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   const resetState = useCallback(() => {
     storage.resetState();
     updateState();
-  }, [updateState]);
+  }, [storage, updateState]);
 
   /**
    * Sends typing to active conversation
@@ -502,7 +499,7 @@ export const ChatProvider = <S extends IChatService>({
         }
       }
     },
-    []
+    [storage, throttledSendTyping, serviceRef]
   );
 
   /**
@@ -514,7 +511,7 @@ export const ChatProvider = <S extends IChatService>({
       storage.setCurrentMessage(message);
       updateState();
     },
-    [updateState]
+    [storage, updateState]
   );
 
   return (
