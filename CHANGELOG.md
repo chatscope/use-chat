@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.5](https://github.com/chatscope/use-chat/compare/v1.0.4...v1.0.5) (2021-09-20)
+
+
+### Bug Fixes
+
+* **provider:** [#2](https://github.com/chatscope/use-chat/issues/2) added missing callbacks dependencies ([5b4042d](https://github.com/chatscope/use-chat/commit/5b4042dec938767582edf6742eea487a92a16dfe))
+
 ## [1.0.4](https://github.com/chatscope/use-chat/compare/v1.0.3...v1.0.4) (2021-05-17)
 
 
