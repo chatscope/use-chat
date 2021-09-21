@@ -119,10 +119,10 @@ export class ExampleChatService implements IChatService {
   }
 
   sendMessage({ message, conversationId }: SendMessageServiceParams) {
-    // Wiadomości wysyłamy za pomocą custom event dispatchowanego do obiektu window.
-    // Są one odbierane w callbacku przypisanym w konstruktorze.
-    // W prawdziwej aplikacji zamiast dispatchować tutaj event
-    // zaimplementujesz wysyłanie wiadomości do Twojego serwera chat
+    // We send messages using a CustomEvent dispatched to the window object.
+    // They are received in the callback assigned in the constructor.
+    // In a real application, instead of dispatching the event here,
+    // you will implement sending messages to your chat server.
     const messageEvent = new CustomEvent("chat-protocol", {
       detail: {
         type: "message",
@@ -143,10 +143,10 @@ export class ExampleChatService implements IChatService {
     conversationId,
     userId,
   }: SendTypingServiceParams) {
-    // Sygnalizację typing wysyłamy za pomocą custom event dispatchowanego do obiektu window.
-    // Jest on odbierana w callbacku przypisanym w konstruktorze.
-    // W prawdziwej aplikacji zamiast dispatchować tutaj event
-    // zaimplementujesz wysyłanie sygnalizacji do Twojego serwera chat
+    // We send the "typing" signalization using a CustomEvent dispatched to the window object.
+    // It is received in the callback assigned in the constructor
+    // In a real application, instead of dispatching the event here,
+    // you will implement sending signalization to your chat server.
     const typingEvent = new CustomEvent("chat-protocol", {
       detail: {
         type: "typing",
@@ -161,10 +161,12 @@ export class ExampleChatService implements IChatService {
     window.dispatchEvent(typingEvent);
   }
 
-  // ChatProvider rejestruje callbacki w serwisie,
-  // które są niezbędne do powiadamiania go o zmianach
-  // Tutaj implementujesz rejestrację tych callbacków w obiekcie Twojego serwisu
-  // Możesz zrobić to w dowolny sposób. Ważne, żebyś miał później do nich dostęp w innych częściach serwisu
+  // The ChatProvider registers callbacks with the service.
+  // These callbacks are necessary to notify the provider of the changes.
+  // For example, when your service receives a message, you need to run an onMessage callback,
+  // because the provider must know that the new message arrived.
+  // Here you need to implement callback registration in your service.
+  // You can do it in any way you like. It's important that you will have access to it elsewhere in the service.
   on<T extends ChatEventType, H extends ChatEvent<T>>(
     evtType: T,
     evtHandler: ChatEventHandler<T, H>
@@ -176,8 +178,8 @@ export class ExampleChatService implements IChatService {
     }
   }
 
-  // ChatProvider może wyrejestrować callback
-  // W takim wypadku usuń go ze swojego serwisu dla zachowania porządku
+  // The ChatProvider can unregister the callback.
+  // In this case remove it from your service to keep it clean.
   off<T extends ChatEventType, H extends ChatEvent<T>>(
     evtType: T,
     eventHandler: ChatEventHandler<T, H>
