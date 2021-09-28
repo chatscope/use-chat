@@ -100,11 +100,10 @@ export class ExampleChatService implements IChatService {
         const { userId, isTyping, conversationId, content, sender } = detail;
 
         if (this.eventHandlers.onUserTyping && sender !== this) {
-          // TODO: Przetłumaczyć
-          // Uruchomienie callbacka onUserTyping zarejestrowanego przez ChatProvider spowoduje
-          // 1. Dodanie użytkownika do listy piszących w danej konwersacji
+          // Running the onUserTyping callback registered by ChatProvider will cause:
+          // 1. Add the user to the list of users who are typing in the conversation
           // 2. Debounce
-          // 3. Przerenderowanie
+          // 3. Re-render
           this.eventHandlers.onUserTyping(
             new UserTypingEvent({
               userId,
