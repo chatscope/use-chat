@@ -99,7 +99,7 @@ This is a point that connects your chat server with the library.
 To use this library, you need to write your own ChatService that implements the IChatService interface.
 The implementation of the service depends on which chat server you are using.
 The content of the service can be your code written from scratch, but the service also can be an encapsulation layer for any ready to use chat communication library   
-There is src/examples/ExampleChatService.ts available for a quick start. This is good start point for developing the real service for your application.
+There is [src/examples/ExampleChatService.ts](https://github.com/chatscope/use-chat/blob/main/src/examples/ExampleChatService.ts) available for a quick start. This is a good starting point for developing the real service for your application.
 
 At the future I will provide more examples showing real communication with socket.io based chat server.  
 
