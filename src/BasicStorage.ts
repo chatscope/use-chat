@@ -211,6 +211,7 @@ export class BasicStorage implements IStorage {
           typingUsers: conversation.typingUsers,
           unreadCounter: conversation.unreadCounter,
           draft: conversation.draft,
+          readonly: conversation.readonly,
         })
       )
       .concat(this.conversations.slice(idx + 1));
