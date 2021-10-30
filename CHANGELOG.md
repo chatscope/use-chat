@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [1.1.0](https://github.com/chatscope/use-chat/compare/v1.0.7...v1.1.0) (2021-10-30)
+
+
+### Features
+
+* added readonly parameter to the conversation ([3861353](https://github.com/chatscope/use-chat/commit/3861353e7dcbde49b77793705b87d129c8e7090d))
+
 ## [1.0.7](https://github.com/chatscope/use-chat/compare/v1.0.6...v1.0.7) (2021-10-30)
 
 
