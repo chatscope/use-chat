@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.1.1](https://github.com/chatscope/use-chat/compare/v1.1.0...v1.1.1) (2021-10-30)
+
+
+### Bug Fixes
+
+* added missing param to replace conversation ([ed2bab4](https://github.com/chatscope/use-chat/commit/ed2bab4561be9da6b9140208d019900b96c332e0))
+
 # [1.1.0](https://github.com/chatscope/use-chat/compare/v1.0.7...v1.1.0) (2021-10-30)
 
 
