@@ -3,13 +3,13 @@ import { Presence } from "./Presence";
 
 export type UserParams = {
   readonly id: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  avatar: string;
-  bio: string;
-  presence: Presence;
+  firstName?: string;
+  lastName?: string;
+  username?: string;
+  email?: string;
+  avatar?: string;
+  bio?: string;
+  presence?: Presence;
 };
 
 export class User {
