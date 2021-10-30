@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.0.6](https://github.com/chatscope/use-chat/compare/v1.0.5...v1.0.6) (2021-10-30)
+
+
+### Bug Fixes
+
+* allow empty props in the user constructor ([bc2949a](https://github.com/chatscope/use-chat/commit/bc2949ad399e3355f1084099391c329ef6e74918))
+
 ## [1.0.5](https://github.com/chatscope/use-chat/compare/v1.0.4...v1.0.5) (2021-09-20)
 
 
