@@ -4,9 +4,9 @@ import { TypingUsersList } from "./TypingUsersList";
 
 export interface ConversationParams {
   readonly id: ConversationId;
-  readonly participants: Array<Participant>;
-  readonly unreadCounter: number;
-  readonly typingUsers: TypingUsersList;
+  readonly participants?: Array<Participant>;
+  readonly unreadCounter?: number;
+  readonly typingUsers?: TypingUsersList;
   readonly draft?: string;
 }
 
