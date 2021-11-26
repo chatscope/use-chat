@@ -178,7 +178,7 @@ export const Chat = () => {
 
   // Get all chat related values and methods from useChat hook 
   const {
-    messages, conversations, activeConversation, setActiveConversation, sendMessage, getUser
+    currentMessages, conversations, activeConversation, setActiveConversation, sendMessage, getUser
   } = useChat();
 
   // Get current user data
@@ -261,7 +261,7 @@ export const Chat = () => {
       </ConversationHeader>
       
       <MessageList>
-        {messages.map(g => <MessageGroup key={g.id} direction={g.direction}>
+        {currentMessages.map(g => <MessageGroup key={g.id} direction={g.direction}>
           <MessageGroup.Messages>
             {g.messages.map(m => <Message key={m.id} model={{
               type: "text",
