@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.2.1](https://github.com/chatscope/use-chat/compare/v1.2.0...v1.2.1) (2021-12-18)
+
+
+### Bug Fixes
+
+* description in replaceconversation ([387e75e](https://github.com/chatscope/use-chat/commit/387e75ea9e883d21875548faeaf1ff73c1d54c29))
+
 # [1.2.0](https://github.com/chatscope/use-chat/compare/v1.1.1...v1.2.0) (2021-12-18)
 
 
