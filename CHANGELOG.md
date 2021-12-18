@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [1.2.0](https://github.com/chatscope/use-chat/compare/v1.1.1...v1.2.0) (2021-12-18)
+
+
+### Features
+
+* added description property to the conversation ([8a565ad](https://github.com/chatscope/use-chat/commit/8a565adb734eb09cfc465bb3749aab69a4838b5d))
+
 ## [1.1.1](https://github.com/chatscope/use-chat/compare/v1.1.0...v1.1.1) (2021-10-30)
 
 
