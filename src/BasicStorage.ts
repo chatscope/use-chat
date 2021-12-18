@@ -211,6 +211,7 @@ export class BasicStorage implements IStorage {
           typingUsers: conversation.typingUsers,
           unreadCounter: conversation.unreadCounter,
           draft: conversation.draft,
+          description: conversation.description,
           readonly: conversation.readonly,
         })
       )
