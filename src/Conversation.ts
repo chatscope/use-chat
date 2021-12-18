@@ -8,6 +8,7 @@ export interface ConversationParams {
   readonly unreadCounter?: number;
   readonly typingUsers?: TypingUsersList;
   readonly draft?: string;
+  readonly description?: string;
   readonly readonly?: boolean;
 }
 
@@ -16,6 +17,7 @@ export class Conversation {
   unreadCounter = 0;
   participants: Array<Participant>;
   typingUsers: TypingUsersList;
+  description = "";
   draft = "";
   readonly = false;
 
@@ -25,6 +27,7 @@ export class Conversation {
     unreadCounter = 0,
     typingUsers = new TypingUsersList({ items: [] }),
     draft = "",
+    description = "",
     readonly = false,
   }: ConversationParams) {
     this.id = id;
@@ -32,6 +35,7 @@ export class Conversation {
     this.participants = participants;
     this.typingUsers = typingUsers;
     this.draft = draft;
+    this.description = description;
     this.readonly = readonly;
   }
 
