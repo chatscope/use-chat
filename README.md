@@ -125,7 +125,7 @@ This description probably looks complicated :). But believe, me it's really simp
 This is very simple example, but it shows how easy is it to implement a chat using **useChat** hook.
 
 For more complex example based on CRA please visit [https://github.com/chatscope/use-chat-example](https://github.com/chatscope/use-chat-example).
-Working example app is available here: [TODO ADD AN ADDRESS]  
+Working example app is available here: [https://use-chat.examples.chatscope.io](https://use-chat.examples.chatscope.io)  
 
 File: index.js
 
