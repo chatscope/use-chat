@@ -59,6 +59,10 @@ type ChatContextProps = ChatState & {
   setDraft: (message: string) => void;
   sendTyping: (params: SendTypingParams) => void;
   addConversation: (conversation: Conversation) => void;
+  removeConversation: (
+    conversationId: ConversationId,
+    removeMessages: boolean | undefined
+  ) => boolean;
   getConversation: (conversationId: ConversationId) => Conversation | undefined;
   updateState: () => void;
   setCurrentMessage: (message: string) => void;
@@ -472,6 +476,22 @@ export const ChatProvider = <S extends IChatService>({
     [storage, updateState]
   );
 
+  /**
+   * Remove conversation from collection
+   * @param conversationId
+   */
+  const removeConversation = useCallback(
+    (
+      conversationId: ConversationId,
+      removeMessages: boolean | undefined = true
+    ) => {
+      const result = storage.removeConversation(conversationId, removeMessages);
+      updateState();
+      return result;
+    },
+    [storage, updateState]
+  );
+
   const resetState = useCallback(() => {
     storage.resetState();
     updateState();
@@ -534,6 +554,7 @@ export const ChatProvider = <S extends IChatService>({
         setDraft,
         sendTyping,
         addConversation,
+        removeConversation,
         getConversation,
         setCurrentMessage,
         resetState,
