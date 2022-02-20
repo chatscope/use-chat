@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.3.1](https://github.com/chatscope/use-chat/compare/v1.3.0...v1.3.1) (2022-02-20)
+
+
+### Bug Fixes
+
+* force build ([d6667d3](https://github.com/chatscope/use-chat/commit/d6667d39fd6020e739769c2207321aae70b637d0))
+
 # [1.3.0](https://github.com/chatscope/use-chat/compare/v1.2.2...v1.3.0) (2022-02-17)
 
 
