@@ -243,7 +243,7 @@ const useStorage = (
 
       service.off(ChatEventType.UserPresenceChanged, onUserPresenceChanged);
 
-      service.on(ChatEventType.UserTyping, onUserTyping);
+      service.off(ChatEventType.UserTyping, onUserTyping);
     };
   }, [storage, service, updateState, debounceTyping, debouncedTyping]);
 };
