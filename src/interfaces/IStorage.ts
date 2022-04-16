@@ -10,7 +10,7 @@ import {
 } from "../";
 import { User } from "../User";
 
-export interface IStorage {
+export interface IStorage<ConversationData = any, UserData = any> {
   readonly groupIdGenerator: GroupIdGenerator;
 
   readonly messageIdGenerator?: MessageIdGenerator;
@@ -21,7 +21,7 @@ export interface IStorage {
    * Sets current (logged in) user object
    * @param user
    */
-  setCurrentUser: (user: User) => void;
+  setCurrentUser: (user: User<UserData>) => void;
 
   /**
    * Add user to collection of users.
@@ -29,7 +29,7 @@ export interface IStorage {
    * Returns true if user has been added, otherwise returns false.
    * @param user
    */
-  addUser: (user: User) => boolean;
+  addUser: (user: User<UserData>) => boolean;
 
   /**
    * Remove user from users collection.
@@ -43,7 +43,9 @@ export interface IStorage {
    * @param userId
    * @return [User, number]|[undefined,undefined]
    */
-  getUser: (userId: UserId) => [User, number] | [undefined, undefined];
+  getUser: (
+    userId: UserId
+  ) => [User<UserData>, number] | [undefined, undefined];
 
   /**
    * Set active conversation and reset unread counter of this conversation if second parameter is set.
@@ -74,7 +76,7 @@ export interface IStorage {
    * Conversation will be added only when item with its id not exists in the collection.
    * @param conversation
    */
-  addConversation: (conversation: Conversation) => boolean;
+  addConversation: (conversation: Conversation<ConversationData>) => boolean;
 
   /**
    * Set unread messages for conversation
@@ -95,13 +97,19 @@ export interface IStorage {
   ) => boolean;
 
   /**
+   * Replace the conversation in the collection with the new one specified in the parameter
+   * @param conversation
+   */
+  updateConversation: (conversation: Conversation) => void;
+
+  /**
    * Get conversation by id
    * @param conversationId
    * @return [Conversation, number]|[undefined, undefined]
    */
   getConversation: (
     conversationId: ConversationId
-  ) => [Conversation, number] | [undefined, undefined];
+  ) => [Conversation<ConversationData>, number] | [undefined, undefined];
 
   /**
    * Add participant to conversation

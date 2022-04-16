@@ -2,7 +2,7 @@ import { Participant, TypingUser } from "./";
 import { ConversationId, UserId } from "./Types";
 import { TypingUsersList } from "./TypingUsersList";
 
-export interface ConversationParams {
+export interface ConversationParams<ConversationData> {
   readonly id: ConversationId;
   readonly participants?: Array<Participant>;
   readonly unreadCounter?: number;
@@ -10,9 +10,10 @@ export interface ConversationParams {
   readonly draft?: string;
   readonly description?: string;
   readonly readonly?: boolean;
+  readonly data?: ConversationData;
 }
 
-export class Conversation {
+export class Conversation<ConversationData = any> {
   readonly id: ConversationId;
   unreadCounter = 0;
   participants: Array<Participant>;
@@ -20,6 +21,7 @@ export class Conversation {
   description = "";
   draft = "";
   readonly = false;
+  data?: ConversationData;
 
   constructor({
     id,
@@ -29,7 +31,8 @@ export class Conversation {
     draft = "",
     description = "",
     readonly = false,
-  }: ConversationParams) {
+    data,
+  }: ConversationParams<ConversationData>) {
     this.id = id;
     this.unreadCounter = unreadCounter;
     this.participants = participants;
@@ -37,6 +40,7 @@ export class Conversation {
     this.draft = draft;
     this.description = description;
     this.readonly = readonly;
+    this.data = data;
   }
 
   /**

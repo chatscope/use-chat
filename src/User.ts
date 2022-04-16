@@ -1,7 +1,7 @@
 import { UserId } from "./Types";
 import { Presence } from "./Presence";
 
-export type UserParams = {
+export type UserParams<UserData = any> = {
   readonly id: string;
   firstName?: string;
   lastName?: string;
@@ -10,9 +10,10 @@ export type UserParams = {
   avatar?: string;
   bio?: string;
   presence?: Presence;
+  data?: UserData;
 };
 
-export class User {
+export class User<UserData = any> {
   readonly id: UserId;
   presence: Presence = new Presence({});
   firstName: string;
@@ -21,6 +22,7 @@ export class User {
   email: string;
   avatar: string;
   bio: string;
+  data?: UserData;
 
   constructor({
     id,
@@ -31,6 +33,7 @@ export class User {
     email = "",
     avatar = "",
     bio = "",
+    data,
   }: UserParams) {
     this.id = id;
     this.presence = presence;
@@ -40,5 +43,6 @@ export class User {
     this.email = email;
     this.avatar = avatar;
     this.bio = bio;
+    this.data = data;
   }
 }

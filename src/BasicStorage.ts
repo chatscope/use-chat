@@ -15,7 +15,8 @@ export interface BasicStorageParams {
   messageIdGenerator?: MessageIdGenerator;
 }
 
-export class BasicStorage implements IStorage {
+export class BasicStorage<ConversationData = any>
+  implements IStorage<ConversationData> {
   private readonly _groupIdGenerator: GroupIdGenerator;
   private readonly _messageIdGenerator?: MessageIdGenerator;
 
@@ -31,7 +32,7 @@ export class BasicStorage implements IStorage {
   // TODO: Users by Id
   private users: Array<User> = [];
   // TODO: Conversations By Id (Dedicated conversations collection)
-  private conversations: Array<Conversation> = [];
+  private conversations: Array<Conversation<ConversationData>> = [];
   private activeConversationId?: ConversationId;
   private messages: GroupedMessages = {};
   private currentMessage = "";
@@ -137,7 +138,7 @@ export class BasicStorage implements IStorage {
    */
   getConversation(
     conversationId: ConversationId
-  ): [Conversation, number] | [undefined, undefined] {
+  ): [Conversation<ConversationData>, number] | [undefined, undefined] {
     const idx = this.conversations.findIndex((c) => c.id === conversationId);
 
     if (idx !== -1) {
@@ -152,7 +153,7 @@ export class BasicStorage implements IStorage {
    * Conversation will be added only when item with its id not exists in the collection.
    * @param conversation
    */
-  addConversation(conversation: Conversation): boolean {
+  addConversation(conversation: Conversation<ConversationData>): boolean {
     const notExists = !this.conversationExists(conversation.id);
     if (notExists) {
       this.conversations = this.conversations.concat(conversation);
@@ -201,7 +202,21 @@ export class BasicStorage implements IStorage {
     return false;
   }
 
-  private replaceConversation(conversation: Conversation, idx: number) {
+  /**
+   * Replace the conversation in the collection with the new one specified in the parameter
+   * @param conversation
+   */
+  updateConversation(conversation: Conversation<ConversationData>) {
+    const [con, idx] = this.getConversation(conversation.id);
+    if (con) {
+      this.replaceConversation(conversation, idx as number);
+    }
+  }
+
+  private replaceConversation(
+    conversation: Conversation<ConversationData>,
+    idx: number
+  ) {
     this.conversations = this.conversations
       .slice(0, idx)
       .concat(
@@ -213,6 +228,7 @@ export class BasicStorage implements IStorage {
           draft: conversation.draft,
           description: conversation.description,
           readonly: conversation.readonly,
+          data: conversation.data,
         })
       )
       .concat(this.conversations.slice(idx + 1));
