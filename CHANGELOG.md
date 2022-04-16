@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [1.4.0](https://github.com/chatscope/use-chat/compare/v1.3.1...v1.4.0) (2022-04-16)
+
+
+### Features
+
+* added generic user data and conversation data ([2a3447e](https://github.com/chatscope/use-chat/commit/2a3447e72d350a4440586c50d23e039c1780d314))
+
 ## [1.3.1](https://github.com/chatscope/use-chat/compare/v1.3.0...v1.3.1) (2022-02-20)
 
 
