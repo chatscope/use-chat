@@ -52,7 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:10.5.4"],\
             ["nanoid", "npm:3.1.22"],\
             ["prettier", "npm:2.7.1"],\
-            ["prop-types", "npm:15.7.2"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
             ["rxjs", "npm:6.6.7"],\
             ["semantic-release", "npm:19.0.3"],\
@@ -116,7 +116,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:10.5.4"],\
             ["nanoid", "npm:3.1.22"],\
             ["prettier", "npm:2.7.1"],\
-            ["prop-types", "npm:15.7.2"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
             ["rxjs", "npm:6.6.7"],\
             ["semantic-release", "npm:19.0.3"],\
@@ -6160,16 +6160,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prop-types", [\
-        ["npm:15.7.2", {\
-          "packageLocation": "./.yarn/cache/prop-types-npm-15.7.2-d7a04f2274-5eef82fdda.zip/node_modules/prop-types/",\
-          "packageDependencies": [\
-            ["prop-types", "npm:15.7.2"],\
-            ["loose-envify", "npm:1.4.0"],\
-            ["object-assign", "npm:4.1.1"],\
-            ["react-is", "npm:16.13.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:15.8.1", {\
           "packageLocation": "./.yarn/cache/prop-types-npm-15.8.1-17c71ee7ee-c056d3f1c0.zip/node_modules/prop-types/",\
           "packageDependencies": [\
