@@ -39,7 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/git", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
             ["@types/prop-types", "npm:15.7.5"],\
-            ["@types/react", "npm:17.0.3"],\
+            ["@types/react", "npm:18.0.15"],\
             ["@typescript-eslint/eslint-plugin", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
             ["eslint", "npm:8.19.0"],\
@@ -100,7 +100,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/git", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
             ["@types/prop-types", "npm:15.7.5"],\
-            ["@types/react", "npm:17.0.3"],\
+            ["@types/react", "npm:18.0.15"],\
             ["@typescript-eslint/eslint-plugin", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
             ["@typescript-eslint/parser", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
             ["eslint", "npm:8.19.0"],\
@@ -1185,10 +1185,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/react", [\
-        ["npm:17.0.3", {\
-          "packageLocation": "./.yarn/cache/@types-react-npm-17.0.3-dc5fdac36f-d29f2a33ed.zip/node_modules/@types/react/",\
+        ["npm:18.0.15", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.0.15-5275c78b86-e22cc388d1.zip/node_modules/@types/react/",\
           "packageDependencies": [\
-            ["@types/react", "npm:17.0.3"],\
+            ["@types/react", "npm:18.0.15"],\
             ["@types/prop-types", "npm:15.7.3"],\
             ["@types/scheduler", "npm:0.16.1"],\
             ["csstype", "npm:3.0.7"]\

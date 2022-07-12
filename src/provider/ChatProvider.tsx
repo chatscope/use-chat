@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import type { ReactChild, ReactChildren } from "react";
+import type { ReactNode } from "react";
 import type {
   ChatServiceFactory,
   ChatState,
@@ -277,7 +277,7 @@ export interface ChatProviderProps<S extends IChatService> {
   serviceFactory: ChatServiceFactory<S>;
   storage: IStorage;
   config: ChatProviderConfig;
-  children?: ReactChild | ReactChildren;
+  children?: ReactNode;
 }
 
 /**
@@ -347,9 +347,10 @@ export const ChatProvider = <S extends IChatService>({
    * Get user by id
    * @param userId
    */
-  const getUser = useCallback((userId: UserId) => storage.getUser(userId)[0], [
-    storage,
-  ]);
+  const getUser = useCallback(
+    (userId: UserId) => storage.getUser(userId)[0],
+    [storage]
+  );
 
   /**
    * Set active conversation
