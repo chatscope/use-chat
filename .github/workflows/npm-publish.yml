@@ -18,7 +18,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           scope: '@chatscope'
       - name: Set Yarn version
-        run: yarn set version 3.1.0
+        run: yarn set version 3.2.1
       - name: Install dependencies
         run: yarn
       - name: Build
