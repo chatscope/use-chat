@@ -1023,7 +1023,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fs-extra", "npm:10.0.0"],\
             ["lodash", "npm:4.17.21"],\
             ["nerf-dart", "npm:1.0.0"],\
-            ["normalize-url", "npm:6.0.1"],\
+            ["normalize-url", "npm:6.1.0"],\
             ["npm", "npm:8.13.2"],\
             ["rc", "npm:1.2.8"],\
             ["read-pkg", "npm:5.2.0"],\
@@ -5085,7 +5085,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize-package-data", "npm:3.0.2"],\
             ["read-pkg-up", "npm:7.0.1"],\
             ["redent", "npm:3.0.0"],\
-            ["trim-newlines", "npm:3.0.0"],\
+            ["trim-newlines", "npm:3.0.1"],\
             ["type-fest", "npm:0.18.1"],\
             ["yargs-parser", "npm:20.2.7"]\
           ],\
@@ -5511,10 +5511,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["normalize-url", [\
-        ["npm:6.0.1", {\
-          "packageLocation": "./.yarn/cache/normalize-url-npm-6.0.1-1df8202fbc-1b2267042d.zip/node_modules/normalize-url/",\
+        ["npm:6.1.0", {\
+          "packageLocation": "./.yarn/cache/normalize-url-npm-6.1.0-b95bc12ece-4a49446311.zip/node_modules/normalize-url/",\
           "packageDependencies": [\
-            ["normalize-url", "npm:6.0.1"]\
+            ["normalize-url", "npm:6.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7415,10 +7415,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["trim-newlines", [\
-        ["npm:3.0.0", {\
-          "packageLocation": "./.yarn/cache/trim-newlines-npm-3.0.0-ccf666d8fc-ad99b771e7.zip/node_modules/trim-newlines/",\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/trim-newlines-npm-3.0.1-22f1f216de-b530f3fadf.zip/node_modules/trim-newlines/",\
           "packageDependencies": [\
-            ["trim-newlines", "npm:3.0.0"]\
+            ["trim-newlines", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
