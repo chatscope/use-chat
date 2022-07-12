@@ -41,7 +41,6 @@ __metadata:
     "@semantic-release/changelog": ^6.0.1
     "@semantic-release/git": ^10.0.1
     "@semantic-release/github": ^8.0.5
-    "@types/nanoid": ^2.1.0
     "@types/prop-types": 15.7.5
     "@types/react": ^17.0.3
     "@typescript-eslint/eslint-plugin": ^5.30.6
@@ -53,7 +52,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     husky: ">=6"
     lint-staged: ">=10"
-    nanoid: 3.1.22
     prettier: 2.7.1
     prop-types: 15.8.1
     react: ^17.0.2
@@ -818,22 +816,6 @@ __metadata:
   version: 1.2.1
   resolution: "@types/minimist@npm:1.2.1"
   checksum: 02631cdd79d346ed6838f5443767b5218a0d915fd0529d4a8840c4eba942d7f6906f0056686dd5a119d42528bed0bee5767ebef7667fdca6fcb95411bb56084e
-  languageName: node
-  linkType: hard
-
-"@types/nanoid@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@types/nanoid@npm:2.1.0"
-  dependencies:
-    "@types/node": "*"
-  checksum: d95d3d7fbea87fa85ec4a01374d37267b5b103c4499fbd37cddce93093ad3f6e602a5500a7068819563ff9b9326664dd58807c064ab32ca209a84638b2354a70
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:*":
-  version: 14.14.34
-  resolution: "@types/node@npm:14.14.34"
-  checksum: 06e49670700f9f8c9115232898c20bcb45abff9bac2a344cb046534c85cd19d91a4e86aa23fd022ac2b5d1ab3a68c5e220b96185cf7ae7d8e948736b217a5945
   languageName: node
   linkType: hard
 
@@ -4373,15 +4355,6 @@ __metadata:
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
   checksum: ff48d251fc3f827e5b1206cda0ffdaec885e56057ee86a3155e1951bc940fd5f33531774b1cc8414d7668c10a8907f863f6561875ee6e8768931a62121a531a1
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:3.1.22":
-  version: 3.1.22
-  resolution: "nanoid@npm:3.1.22"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: 42378ebee489ab521aff0722b54ed7d1bcadb023398925f84ce5e160d0b61693f251e94714a3f4c16c7298b06b0f6871c52fdebc967fc48c0bdcffb096f0ee17
   languageName: node
   linkType: hard
 

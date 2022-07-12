@@ -38,7 +38,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/changelog", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:6.0.1"],\
             ["@semantic-release/git", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
-            ["@types/nanoid", "npm:2.1.0"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/react", "npm:17.0.3"],\
             ["@typescript-eslint/eslint-plugin", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
@@ -50,7 +49,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:4.6.0"],\
             ["husky", "npm:6.0.0"],\
             ["lint-staged", "npm:10.5.4"],\
-            ["nanoid", "npm:3.1.22"],\
             ["prettier", "npm:2.7.1"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
@@ -102,7 +100,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/changelog", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:6.0.1"],\
             ["@semantic-release/git", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
-            ["@types/nanoid", "npm:2.1.0"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/react", "npm:17.0.3"],\
             ["@typescript-eslint/eslint-plugin", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:5.30.6"],\
@@ -114,7 +111,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:966f01ca8afb3964ded04b60291d5aa24ec9555db4efd16e175f58f0f4e23254e1dfcd91d0b19320ae8610edb9b8231d04df35e84e3dd8af4637b643069076da#npm:4.6.0"],\
             ["husky", "npm:6.0.0"],\
             ["lint-staged", "npm:10.5.4"],\
-            ["nanoid", "npm:3.1.22"],\
             ["prettier", "npm:2.7.1"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:17.0.2"],\
@@ -1050,25 +1046,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-minimist-npm-1.2.1-dc316d808d-02631cdd79.zip/node_modules/@types/minimist/",\
           "packageDependencies": [\
             ["@types/minimist", "npm:1.2.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/nanoid", [\
-        ["npm:2.1.0", {\
-          "packageLocation": "./.yarn/cache/@types-nanoid-npm-2.1.0-d570b8fe98-d95d3d7fbe.zip/node_modules/@types/nanoid/",\
-          "packageDependencies": [\
-            ["@types/nanoid", "npm:2.1.0"],\
-            ["@types/node", "npm:14.14.34"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/node", [\
-        ["npm:14.14.34", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.34-6d5f0fa2f8-06e4967070.zip/node_modules/@types/node/",\
-          "packageDependencies": [\
-            ["@types/node", "npm:14.14.34"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5225,15 +5202,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mute-stream-npm-0.0.8-489a7d6c2b-ff48d251fc.zip/node_modules/mute-stream/",\
           "packageDependencies": [\
             ["mute-stream", "npm:0.0.8"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["nanoid", [\
-        ["npm:3.1.22", {\
-          "packageLocation": "./.yarn/cache/nanoid-npm-3.1.22-e0ab44a9c0-42378ebee4.zip/node_modules/nanoid/",\
-          "packageDependencies": [\
-            ["nanoid", "npm:3.1.22"]\
           ],\
           "linkType": "HARD"\
         }]\
