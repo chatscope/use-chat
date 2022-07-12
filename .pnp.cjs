@@ -3367,7 +3367,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/find-versions-npm-4.0.0-e4bd62bace-2b4c749dc3.zip/node_modules/find-versions/",\
           "packageDependencies": [\
             ["find-versions", "npm:4.0.0"],\
-            ["semver-regex", "npm:3.1.2"]\
+            ["semver-regex", "npm:3.1.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6798,10 +6798,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["semver-regex", [\
-        ["npm:3.1.2", {\
-          "packageLocation": "./.yarn/cache/semver-regex-npm-3.1.2-66d0f8130f-688c3e0b22.zip/node_modules/semver-regex/",\
+        ["npm:3.1.4", {\
+          "packageLocation": "./.yarn/cache/semver-regex-npm-3.1.4-e2bca95a0a-3962105908.zip/node_modules/semver-regex/",\
           "packageDependencies": [\
-            ["semver-regex", "npm:3.1.2"]\
+            ["semver-regex", "npm:3.1.4"]\
           ],\
           "linkType": "HARD"\
         }]\
