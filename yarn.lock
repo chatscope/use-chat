@@ -4618,10 +4618,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"normalize-url@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "normalize-url@npm:6.0.0"
-  checksum: bb71b127d8583e62362191e8d053ee05ebf3c0d46cef85175061f3bb2935ac83d54f909da2a56b7dd3c9dcca1d330857670aaf9d7b9a89770a5cd672800fe9b2
+"normalize-url@npm:6.0.1":
+  version: 6.0.1
+  resolution: "normalize-url@npm:6.0.1"
+  checksum: 1b2267042d6860c181cfacd92df6405195d4078d47f05f1e4f7a65a5edfbbce0f6e81458cd31a49598f642316ca754336b21be7a6d9ca1d47a0b8caaf440ecd3
   languageName: node
   linkType: hard
 
