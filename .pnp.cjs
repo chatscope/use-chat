@@ -6115,13 +6115,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["path-parse", [\
-        ["npm:1.0.6", {\
-          "packageLocation": "./.yarn/cache/path-parse-npm-1.0.6-4a4c90546c-962a85dd38.zip/node_modules/path-parse/",\
-          "packageDependencies": [\
-            ["path-parse", "npm:1.0.6"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:1.0.7", {\
           "packageLocation": "./.yarn/cache/path-parse-npm-1.0.7-09564527b7-49abf3d811.zip/node_modules/path-parse/",\
           "packageDependencies": [\
@@ -6582,7 +6575,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["resolve", "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"],\
             ["is-core-module", "npm:2.2.0"],\
-            ["path-parse", "npm:1.0.6"]\
+            ["path-parse", "npm:1.0.7"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -6601,7 +6594,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["resolve", "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=07638b"],\
             ["is-core-module", "npm:2.2.0"],\
-            ["path-parse", "npm:1.0.6"]\
+            ["path-parse", "npm:1.0.7"]\
           ],\
           "linkType": "HARD"\
         }]\
