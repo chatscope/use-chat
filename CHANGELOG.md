@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [1.4.1](https://github.com/chatscope/use-chat/compare/v1.4.0...v1.4.1) (2022-07-12)
+
+
+### Bug Fixes
+
+* children type of chat provider ([0e74498](https://github.com/chatscope/use-chat/commit/0e744989afef22e99edd6e4b1d9efe123fc829a6))
+
 # [1.4.0](https://github.com/chatscope/use-chat/compare/v1.3.1...v1.4.0) (2022-04-16)
 
 
