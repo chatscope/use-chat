@@ -242,13 +242,13 @@ export const Chat = () => {
             return [undefined, undefined]
           })();
 
-          <Conversation key={c.id}
+          return (<Conversation key={c.id}
                         name={name}
                         active={activeConversation?.id === c.id}
                         unreadCnt={c.unreadCounter}
                         onClick={e => setActiveConversation(c.id)}>
             {avatar}
-          </Conversation>
+          </Conversation>);
         })}
       </ConversationList>
     </Sidebar>
