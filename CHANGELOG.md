@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [1.5.0](https://github.com/chatscope/use-chat/compare/v1.4.1...v1.5.0) (2022-07-27)
+
+
+### Features
+
+* added createdDate and updatedDate properties to the ChatMessage ([f9febc4](https://github.com/chatscope/use-chat/commit/f9febc49d9091d7300c74fbbd33abf0f2af5a6f5))
+
 ## [1.4.1](https://github.com/chatscope/use-chat/compare/v1.4.0...v1.4.1) (2022-07-12)
 
 
