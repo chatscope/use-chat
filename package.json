@@ -1,6 +1,6 @@
 {
   "name": "@chatscope/use-chat",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "React hook for state management in chat applications",
   "license": "MIT",
   "homepage": "https://chatscope.io/",

@@ -1,5 +1,17 @@
 # @chatscope/use-chat changelog
 
+# [2.0.0](https://github.com/chatscope/use-chat/compare/v1.5.0...v2.0.0) (2022-07-27)
+
+
+### Documentation
+
+* readme update ([2752aeb](https://github.com/chatscope/use-chat/commit/2752aeb75ccceb8f94bbdc7d165aaac4eb341f2f))
+
+
+### BREAKING CHANGES
+
+* changed names of properties createdDate and updatedDate
+
 # [1.5.0](https://github.com/chatscope/use-chat/compare/v1.4.1...v1.5.0) (2022-07-27)
 
 
