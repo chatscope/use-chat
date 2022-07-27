@@ -9,8 +9,8 @@ export type ChatMessageParams<T extends MessageContentType> = {
   senderId: string;
   direction: MessageDirection;
   content: MessageContent<T>;
-  cratedDate?: Date;
-  updatedDate?: Date;
+  createdTime?: Date;
+  updatedTime?: Date;
 };
 
 export class ChatMessage<T extends MessageContentType> {
@@ -20,8 +20,8 @@ export class ChatMessage<T extends MessageContentType> {
   senderId: string;
   direction: MessageDirection;
   content: MessageContent<T>;
-  createdDate: Date;
-  updatedDate?: Date;
+  createdTime: Date;
+  updatedTime?: Date;
 
   constructor({
     id,
@@ -30,8 +30,8 @@ export class ChatMessage<T extends MessageContentType> {
     senderId,
     direction,
     content,
-    cratedDate = new Date(),
-    updatedDate,
+    createdTime = new Date(),
+    updatedTime,
   }: ChatMessageParams<MessageContentType>) {
     this.id = id;
     this.status = status;
@@ -39,7 +39,7 @@ export class ChatMessage<T extends MessageContentType> {
     this.senderId = senderId;
     this.direction = direction;
     this.content = content;
-    this.createdDate = cratedDate;
-    this.updatedDate = updatedDate;
+    this.createdTime = createdTime;
+    this.updatedTime = updatedTime;
   }
 }
