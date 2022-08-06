@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [2.0.1](https://github.com/chatscope/use-chat/compare/v2.0.0...v2.0.1) (2022-08-06)
+
+
+### Bug Fixes
+
+* added sources to the npm package ([63d9992](https://github.com/chatscope/use-chat/commit/63d99924811ed29f65da2a1d5e44affda0b2f4c8))
+
 # [2.0.0](https://github.com/chatscope/use-chat/compare/v1.5.0...v2.0.0) (2022-07-27)
 
 
