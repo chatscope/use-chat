@@ -68,7 +68,7 @@ The implementation of a consistent interface also provides the possibility of in
 Using yarn.
 
 ```sh
-yarn install @chatscope/use-chat
+yarn add @chatscope/use-chat
 ```
 
 Using npm.
