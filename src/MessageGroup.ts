@@ -38,24 +38,21 @@ export class MessageGroup {
   }
 
   /**
-   * Replace message in message collection
+   * Replace the given message in the message collection
    * @param message
    */
   updateMessage(message: ChatMessage<MessageContentType>): void {
     const [foundMessage, idx] = this.getMessage(message.id);
 
     if (foundMessage) {
-      this.messages = this.messages
-        .concat(this.messages.slice(0, idx as number))
-        .concat(message)
-        .concat(this.messages.slice((idx as number) + 1));
+      this.replaceMessage(foundMessage, idx);
     }
   }
 
   /**
-   * Replace message at specified index
-   * Return true if message exists in specified position.
-   * Returns true if index is out of bound
+   * Replace the message at the specified index in the message collection.
+   * Returns true if the message exists at the specified position.
+   * Returns false if the given index is out of bound.
    * @param message
    * @param index
    */
@@ -63,12 +60,12 @@ export class MessageGroup {
     message: ChatMessage<MessageContentType>,
     index: number
   ): boolean {
-    if (this.messages.length > index) {
+    if (this.messages.length <= index) {
       return false;
     }
 
     this.messages = this.messages
-      .concat(this.messages.slice(0, index))
+      .slice(0, index)
       .concat(message)
       .concat(this.messages.slice(index + 1));
 
