@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [2.0.2](https://github.com/chatscope/use-chat/compare/v2.0.1...v2.0.2) (2022-09-13)
+
+
+### Bug Fixes
+
+* [#13](https://github.com/chatscope/use-chat/issues/13) replace and update message methods in MessageGroup ([ae0006d](https://github.com/chatscope/use-chat/commit/ae0006df1cd1035785ae524887a1d0b88fdeccf6))
+
 ## [2.0.1](https://github.com/chatscope/use-chat/compare/v2.0.0...v2.0.1) (2022-08-06)
 
 
