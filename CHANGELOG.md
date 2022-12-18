@@ -1,5 +1,13 @@
 # @chatscope/use-chat changelog
 
+## [2.0.3](https://github.com/chatscope/use-chat/compare/v2.0.2...v2.0.3) (2022-12-18)
+
+
+### Bug Fixes
+
+* react peerDependency ([7827756](https://github.com/chatscope/use-chat/commit/782775640ba08672dfbf75b8641bc69cfed72003))
+* yarn lockfile ([f02148f](https://github.com/chatscope/use-chat/commit/f02148f3001b32fe814488f66806987fa4b03c1e))
+
 ## [2.0.2](https://github.com/chatscope/use-chat/compare/v2.0.1...v2.0.2) (2022-09-13)
 
 
