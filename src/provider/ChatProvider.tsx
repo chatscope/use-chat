@@ -68,6 +68,7 @@ type ChatContextProps = ChatState & {
   setCurrentMessage: (message: string) => void;
   resetState: () => void;
   service: IChatService;
+  removeMessagesFromConversation: (conversationId: ConversationId) => void;
 };
 
 // Experimental
@@ -573,6 +574,7 @@ export const ChatProvider = <S extends IChatService>({
         resetState,
         updateState,
         service: serviceRef.current,
+        removeMessagesFromConversation,
       }}
     >
       {children}
