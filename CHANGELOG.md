@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [3.1.0](https://github.com/chatscope/use-chat/compare/v3.0.0...v3.1.0) (2022-12-18)
+
+
+### Features
+
+* added removeMessagesFromConversation method to ChatProvider ([c957453](https://github.com/chatscope/use-chat/commit/c957453880a55438c1063490e2d9e81b60a50047))
+
 # [3.0.0](https://github.com/chatscope/use-chat/compare/v2.0.3...v3.0.0) (2022-12-18)
 
 
