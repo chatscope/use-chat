@@ -168,4 +168,10 @@ export interface IStorage<ConversationData = any, UserData = any> {
    * @param message
    */
   setCurrentMessage: (message: string) => void;
+
+  /**
+   * Remove all the messages from the conversation
+   * @param conversationId
+   */
+  removeMessagesFromConversation: (conversationId: ConversationId) => void;
 }

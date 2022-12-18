@@ -535,6 +535,18 @@ export const ChatProvider = <S extends IChatService>({
     [storage, updateState]
   );
 
+  /**
+   * Remove all the messages from the conversation
+   * @param conversationId
+   */
+  const removeMessagesFromConversation = useCallback(
+    (conversationId: ConversationId) => {
+      storage.removeMessagesFromConversation(conversationId);
+      updateState();
+    },
+    [storage, updateState]
+  );
+
   return (
     <ChatContext.Provider
       value={{

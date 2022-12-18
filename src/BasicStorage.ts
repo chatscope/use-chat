@@ -16,7 +16,8 @@ export interface BasicStorageParams {
 }
 
 export class BasicStorage<ConversationData = any>
-  implements IStorage<ConversationData> {
+  implements IStorage<ConversationData>
+{
   private readonly _groupIdGenerator: GroupIdGenerator;
   private readonly _messageIdGenerator?: MessageIdGenerator;
 
@@ -430,5 +431,13 @@ export class BasicStorage<ConversationData = any>
    */
   setCurrentMessage(message: string) {
     this.currentMessage = message;
+  }
+
+  /**
+   * Remove all the messages from the conversation
+   * @param conversationId
+   */
+  removeMessagesFromConversation(conversationId: ConversationId) {
+    delete this.messages[conversationId];
   }
 }
