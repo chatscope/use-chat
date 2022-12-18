@@ -1,5 +1,17 @@
 # @chatscope/use-chat changelog
 
+# [3.0.0](https://github.com/chatscope/use-chat/compare/v2.0.3...v3.0.0) (2022-12-18)
+
+
+* feat!: added removeMessagesFromConversation ([639588b](https://github.com/chatscope/use-chat/commit/639588b5e52745c4b708db11917a11ba31935dd9))
+
+
+### BREAKING CHANGES
+
+* due to the addition of a new method to the IStorage interface.
+However, this is only relevant if you are using a custom storage implementation.
+Otherwise, the library is backward compatible and the upgrade is safe.
+
 ## [2.0.3](https://github.com/chatscope/use-chat/compare/v2.0.2...v2.0.3) (2022-12-18)
 
 
