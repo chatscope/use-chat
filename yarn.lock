@@ -58,7 +58,7 @@ __metadata:
     semantic-release: ^19.0.3
     typescript: 4.7.4
   peerDependencies:
-    react: ^18.2.0
+    react: ">= 17.0 <= 18.2.0"
   languageName: unknown
   linkType: soft
 
