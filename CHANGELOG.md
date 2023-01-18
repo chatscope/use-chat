@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [3.1.1](https://github.com/chatscope/use-chat/compare/v3.1.0...v3.1.1) (2023-01-18)
+
+
+### Bug Fixes
+
+* [#15](https://github.com/chatscope/use-chat/issues/15) lazy service init ([834634e](https://github.com/chatscope/use-chat/commit/834634ed978ebfea8928758d7e54686d62db1ee3))
+
 # [3.1.0](https://github.com/chatscope/use-chat/compare/v3.0.0...v3.1.0) (2022-12-18)
 
 
