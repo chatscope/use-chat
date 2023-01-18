@@ -29,6 +29,7 @@ import { TypingUser } from "../TypingUser";
 import { useThrottledSendTyping } from "./useThrottledSendTyping";
 import { useDebounceTyping } from "./useDebounceTyping";
 import type { MessageGroup } from "../MessageGroup";
+import { useLazyServiceFactoryRef } from "./useLazyServiceFactoryRef";
 
 export interface SendMessageParams {
   message: ChatMessage<MessageContentType>;
@@ -306,7 +307,11 @@ export const ChatProvider = <S extends IChatService>({
     setState(newState);
   }, [setState, storage]);
 
-  const serviceRef = useRef(serviceFactory(storage, updateState));
+  const serviceRef = useLazyServiceFactoryRef(
+    serviceFactory,
+    storage,
+    updateState
+  );
 
   useStorage(storage, serviceRef.current, setState, {
     debounceTyping,
