@@ -68,6 +68,15 @@ export interface VideoContent extends MessageContent<MessageContentType.Video> {
   body: ArrayBuffer;
 }
 
+// Attachments can be sent as
+// - url/data url
+// - binary
+// If url is empty string it means that it's a binary image
+export interface AudioContent extends MessageContent<MessageContentType.Audio> {
+  url: string;
+  body: ArrayBuffer;
+}
+
 export interface VCardContent extends MessageContent<MessageContentType.VCard> {
   body: string;
 }

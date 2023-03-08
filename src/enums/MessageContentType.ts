@@ -8,8 +8,9 @@ export enum MessageContentType {
   Attachment = 6, // For all other not handled known/ and unknown file types
   AttachmentList = 7, // Maybe it would be better to have only AttachmentList? One Attachments is a special case of AttachmentList
   Video = 8, // Single video file
-  VCard = 9, // application/vcard+json or text/vcard
-  ICalendar = 10, // text/calendar
+  Audio = 9, // Single audio file
+  VCard = 10, // application/vcard+json or text/vcard
+  ICalendar = 11, // text/calendar
   System = 128, // System message
   Other = 255, // Any other custom type
 }
