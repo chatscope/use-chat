@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.7](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.6...v4.0.0-alpha.7) (2023-03-08)
+
+
+### Bug Fixes
+
+* enums exports ([83bb654](https://github.com/chatscope/use-chat/commit/83bb654025bd8d8d7ce4baa8786f9c7d70d65371))
+
 # [4.0.0-alpha.6](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.5...v4.0.0-alpha.6) (2023-03-08)
 
 
