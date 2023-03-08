@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.6](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.5...v4.0.0-alpha.6) (2023-03-08)
+
+
+### Features
+
+* typings MessageContent ([6e80f8d](https://github.com/chatscope/use-chat/commit/6e80f8de1a2b6311d6a58e827b5ac51866cca65f))
+
 # [4.0.0-alpha.5](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.4...v4.0.0-alpha.5) (2023-03-08)
 
 
