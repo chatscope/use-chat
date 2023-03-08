@@ -1,22 +1,23 @@
 import { MessageContentType } from "../enums/MessageContentType";
+import { SystemMessageType } from "../enums/SystemMessageType";
 
-export interface MessageContent<MessageContentType> {
-  content: unknown;
+export interface MessageContent<T extends MessageContentType> {
+  body: unknown;
 }
 
 export interface TextContent
   extends MessageContent<MessageContentType.TextPlain> {
-  content: string;
+  body: string;
 }
 
 export interface MarkdownContent
   extends MessageContent<MessageContentType.TextMarkdown> {
-  content: string;
+  body: string;
 }
 
 export interface HtmlContent
   extends MessageContent<MessageContentType.TextHtml> {
-  content: string;
+  body: string;
 }
 
 // Images can be sent as:
@@ -25,7 +26,7 @@ export interface HtmlContent
 // If url is empty string it means that it's a binary image
 export interface ImageContent extends MessageContent<MessageContentType.Image> {
   url: string;
-  data: ArrayBuffer;
+  body: ArrayBuffer;
 }
 
 // TODO: Item with types, and names - how to merge it with ImageContent and VideoContent?
@@ -36,11 +37,11 @@ export interface GalleryItem {
 
 export interface GalleryContent
   extends MessageContent<MessageContentType.Gallery> {
-  content: GalleryItem[];
+  body: GalleryItem[];
 }
 
 export interface KmlContent extends MessageContent<MessageContentType.Kml> {
-  content: string;
+  body: string;
 }
 
 // Attachments can be sent as
@@ -50,12 +51,12 @@ export interface KmlContent extends MessageContent<MessageContentType.Kml> {
 export interface AttachmentContent
   extends MessageContent<MessageContentType.Attachment> {
   url: string;
-  data: ArrayBuffer;
+  body: ArrayBuffer;
 }
 
 export interface AttachmentListContent
   extends MessageContent<MessageContentType.AttachmentList> {
-  content: AttachmentContent[];
+  body: AttachmentContent[];
 }
 
 // Attachments can be sent as
@@ -64,13 +65,24 @@ export interface AttachmentListContent
 // If url is empty string it means that it's a binary image
 export interface VideoContent extends MessageContent<MessageContentType.Video> {
   url: string;
-  data: ArrayBuffer;
+  body: ArrayBuffer;
 }
 
 export interface VCardContent extends MessageContent<MessageContentType.VCard> {
-  content: unknown;
+  body: string;
+}
+
+export interface ICalendarContent
+  extends MessageContent<MessageContentType.ICalendar> {
+  body: string;
+}
+
+export interface SystemContent<T extends SystemMessageType>
+  extends MessageContent<MessageContentType.System> {
+  type: T;
+  body: string;
 }
 
 export interface OtherContent extends MessageContent<MessageContentType.Other> {
-  content: unknown;
+  body: any;
 }
