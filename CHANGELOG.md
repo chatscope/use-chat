@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.3](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.2...v4.0.0-alpha.3) (2023-03-08)
+
+
+### Features
+
+* added ICalendar and System content types ([2dbe92b](https://github.com/chatscope/use-chat/commit/2dbe92b469c6967d890ab083069a1012b390311b))
+
 # [4.0.0-alpha.2](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.1...v4.0.0-alpha.2) (2023-03-08)
 
 
