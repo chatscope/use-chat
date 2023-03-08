@@ -1,5 +1,18 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.1](https://github.com/chatscope/use-chat/compare/v3.1.1...v4.0.0-alpha.1) (2023-03-08)
+
+
+### Features
+
+* added sender and data to ChatMessage ([d91b013](https://github.com/chatscope/use-chat/commit/d91b013a4b18c8ab4580779ca170ed2c3c612c78))
+
+
+### BREAKING CHANGES
+
+* property senderId was removed from ChatMessage class,
+some properties was changed to readonly
+
 ## [3.1.1](https://github.com/chatscope/use-chat/compare/v3.1.0...v3.1.1) (2023-01-18)
 
 
