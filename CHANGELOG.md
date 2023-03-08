@@ -1,5 +1,17 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.4](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.3...v4.0.0-alpha.4) (2023-03-08)
+
+
+### Features
+
+* added SystemMessageType, changed property names ([ee40826](https://github.com/chatscope/use-chat/commit/ee40826410befaf7d69d59e3f73574ab036ad3fc))
+
+
+### BREAKING CHANGES
+
+* property names of the *Content classes has changed
+
 # [4.0.0-alpha.3](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.2...v4.0.0-alpha.3) (2023-03-08)
 
 
