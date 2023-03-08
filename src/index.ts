@@ -8,6 +8,7 @@ export * from "./Conversation";
 export * from "./ConversationRole";
 export * from "./Participant";
 export * from "./Presence";
+export * from "./Sender";
 export * from "./Types";
 export * from "./TypingUser";
 export * from "./TypingUsersList";
