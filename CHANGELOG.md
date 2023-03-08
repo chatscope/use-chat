@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.5](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.4...v4.0.0-alpha.5) (2023-03-08)
+
+
+### Bug Fixes
+
+* added missing exports ([e7763f6](https://github.com/chatscope/use-chat/commit/e7763f6c0e82b94da13e082f704abe462d351b29))
+
 # [4.0.0-alpha.4](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.3...v4.0.0-alpha.4) (2023-03-08)
 
 
