@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.2](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.1...v4.0.0-alpha.2) (2023-03-08)
+
+
+### Bug Fixes
+
+* missing Sender export ([5512de9](https://github.com/chatscope/use-chat/commit/5512de94b6ebc5543e5984160c23bec1972c68b3))
+
 # [4.0.0-alpha.1](https://github.com/chatscope/use-chat/compare/v3.1.1...v4.0.0-alpha.1) (2023-03-08)
 
 
