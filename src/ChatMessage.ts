@@ -1,45 +1,50 @@
 import { MessageContentType, MessageDirection, MessageStatus } from "./enums";
 import { MessageContent } from "./interfaces/MessageContent";
 import { ChatMessageId } from "./Types";
+import type { Sender } from "./Sender";
 
-export type ChatMessageParams<T extends MessageContentType> = {
+export type ChatMessageParams<T extends MessageContentType, D = undefined> = {
   id: ChatMessageId;
   status: MessageStatus;
   contentType: T;
-  senderId: string;
+  sender: Sender;
   direction: MessageDirection;
   content: MessageContent<T>;
   createdTime?: Date;
   updatedTime?: Date;
+  data?: D;
 };
 
-export class ChatMessage<T extends MessageContentType> {
-  id: ChatMessageId;
+export class ChatMessage<T extends MessageContentType, D = undefined> {
+  readonly id: ChatMessageId;
   status: MessageStatus;
-  contentType: MessageContentType;
-  senderId: string;
+  readonly contentType: T;
+  readonly sender: Sender;
   direction: MessageDirection;
   content: MessageContent<T>;
-  createdTime: Date;
+  readonly createdTime: Date;
   updatedTime?: Date;
+  data?: D;
 
   constructor({
     id,
     status,
     contentType,
-    senderId,
+    sender,
     direction,
     content,
     createdTime = new Date(),
     updatedTime,
-  }: ChatMessageParams<MessageContentType>) {
+    data,
+  }: ChatMessageParams<T>) {
     this.id = id;
     this.status = status;
     this.contentType = contentType;
-    this.senderId = senderId;
+    this.sender = sender;
     this.direction = direction;
     this.content = content;
     this.createdTime = createdTime;
     this.updatedTime = updatedTime;
+    this.data = data;
   }
 }

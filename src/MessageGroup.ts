@@ -1,23 +1,24 @@
-import { ChatMessageId, UserId } from "./Types";
+import { ChatMessageId } from "./Types";
 import { MessageDirection } from "./enums";
 import { ChatMessage } from "./";
 import { MessageContentType } from "./enums";
+import type { Sender } from "./Sender";
 
 type MessageGroupParams = {
   id: string;
-  senderId: string;
+  sender: Sender;
   direction: MessageDirection;
 };
 
 export class MessageGroup {
   readonly id: string;
-  readonly senderId: UserId;
+  readonly sender: Sender;
   readonly direction: MessageDirection;
   messages: Array<ChatMessage<MessageContentType>> = [];
 
-  constructor({ id, senderId, direction }: MessageGroupParams) {
+  constructor({ id, sender, direction }: MessageGroupParams) {
     this.id = id;
-    this.senderId = senderId;
+    this.sender = sender;
     this.direction = direction;
   }
 

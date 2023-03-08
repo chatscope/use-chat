@@ -183,7 +183,7 @@ const useStorage = (
 
       // Reset typing
       if (conversation) {
-        conversation.removeTypingUser(message.senderId);
+        conversation.removeTypingUser(message.sender.id);
       }
 
       updateState();

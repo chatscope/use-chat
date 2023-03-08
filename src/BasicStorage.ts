@@ -4,6 +4,7 @@ import { MessageGroup } from "./MessageGroup";
 import { ChatMessage, Conversation, Participant, Presence } from "./";
 import { User } from "./User";
 import { MessageContentType } from "./";
+import { Sender } from "./Sender";
 
 export type MessageIdGenerator = (
   message: ChatMessage<MessageContentType>
@@ -295,7 +296,7 @@ export class BasicStorage<ConversationData = any>
 
       const lastGroup = groups[groups.length - 1];
 
-      if (lastGroup.senderId === message.senderId) {
+      if (lastGroup.sender.id === message.sender.id) {
         // Add message to group
 
         const newMessage = this.getMessageWithId(message, generateId);
@@ -306,7 +307,7 @@ export class BasicStorage<ConversationData = any>
 
     const group = new MessageGroup({
       id: this.groupIdGenerator(),
-      senderId: message.senderId,
+      sender: new Sender({ ...message.sender }),
       direction: message.direction,
     });
 
