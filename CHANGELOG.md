@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+# [4.0.0-alpha.9](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.8...v4.0.0-alpha.9) (2023-03-09)
+
+
+### Bug Fixes
+
+* wrong SystemMessageType enum values ([bae1b2f](https://github.com/chatscope/use-chat/commit/bae1b2f58ea25fc06cf25f5bb62ca6232f3fbcde))
+
 # [4.0.0-alpha.8](https://github.com/chatscope/use-chat/compare/v4.0.0-alpha.7...v4.0.0-alpha.8) (2023-03-09)
 
 
