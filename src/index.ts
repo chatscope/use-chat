@@ -6,6 +6,7 @@ export * from "./BasicStorage";
 export * from "./ChatMessage";
 export * from "./Conversation";
 export * from "./ConversationRole";
+export * from "./MessageGroup";
 export * from "./Participant";
 export * from "./Presence";
 export * from "./Types";
