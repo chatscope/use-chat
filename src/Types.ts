@@ -16,14 +16,14 @@ export type UserId = string;
 export type Permission = unknown;
 export type GroupedMessages = Record<ConversationId, MessageGroup[]>;
 
-export type ChatState = {
+export type ChatState<ConversationData = any, UserData = any> = {
   /**
    * Current logged in user (chat operator)
    */
-  currentUser?: User;
-  users: Array<User>;
-  conversations: Array<Conversation>;
-  activeConversation?: Conversation;
+  currentUser?: User<UserData>;
+  users: Array<User<UserData>>;
+  conversations: Array<Conversation<ConversationData>>;
+  activeConversation?: Conversation<ConversationData>;
   currentMessages: MessageGroup[];
   messages: GroupedMessages;
   /**

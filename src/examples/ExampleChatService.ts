@@ -42,8 +42,8 @@ type EventHandlers = {
   [key: string]: any;
 };
 
-export class ExampleChatService implements IChatService {
-  storage?: IStorage;
+export class ExampleChatService<ConversationData = any, UserData = any> implements IChatService {
+  storage?: IStorage<ConversationData, UserData>;
   updateState: UpdateState;
 
   eventHandlers: EventHandlers = {
@@ -55,7 +55,7 @@ export class ExampleChatService implements IChatService {
     onUserTyping: () => {},
   };
 
-  constructor(storage: IStorage, update: UpdateState) {
+  constructor(storage: IStorage<ConversationData, UserData>, update: UpdateState) {
     this.storage = storage;
     this.updateState = update;
 

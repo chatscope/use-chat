@@ -43,12 +43,12 @@ export interface SendTypingParams extends SendTypingServiceParams {
   throttle: boolean;
 }
 
-type ChatContextProps = ChatState & {
+type ChatContextProps<ConversationData = any, UserData = any> = ChatState<ConversationData, UserData> & {
   currentMessages: MessageGroup[];
-  setCurrentUser: (user: User) => void;
-  addUser: (user: User) => boolean;
+  setCurrentUser: (user: User<UserData>) => void;
+  addUser: (user: User<UserData>) => boolean;
   removeUser: (userId: UserId) => boolean;
-  getUser: (userId: UserId) => User | undefined;
+  getUser: (userId: UserId) => User<UserData> | undefined;
   setActiveConversation: (conversationId: ConversationId) => void;
   sendMessage: (params: SendMessageParams) => void;
   addMessage: (
@@ -59,12 +59,12 @@ type ChatContextProps = ChatState & {
   updateMessage: (message: ChatMessage<MessageContentType>) => void;
   setDraft: (message: string) => void;
   sendTyping: (params: SendTypingParams) => void;
-  addConversation: (conversation: Conversation) => void;
+  addConversation: (conversation: Conversation<ConversationData>) => void;
   removeConversation: (
     conversationId: ConversationId,
     removeMessages: boolean | undefined
   ) => boolean;
-  getConversation: (conversationId: ConversationId) => Conversation | undefined;
+  getConversation: (conversationId: ConversationId) => Conversation<ConversationData> | undefined;
   updateState: () => void;
   setCurrentMessage: (message: string) => void;
   resetState: () => void;
@@ -127,8 +127,8 @@ const ChatContext = createContext<ChatContextProps | undefined>(undefined);
 
 ChatContext.displayName = "ChatContext";
 
-export const useChat = (): ChatContextProps => {
-  const context = useContext(ChatContext);
+export const useChat = <C = any, D = any>(): ChatContextProps => {
+  const context = useContext(ChatContext) as ChatContextProps<C, D>;
 
   if (!context) {
     throw new Error("useChat must be within ChatProvider");
@@ -275,9 +275,9 @@ export interface ChatProviderConfig {
   autoDraft?: AutoDraft;
 }
 
-export interface ChatProviderProps<S extends IChatService> {
+export interface ChatProviderProps<S extends IChatService, C = any, D = any> {
   serviceFactory: ChatServiceFactory<S>;
-  storage: IStorage;
+  storage: IStorage<C, D>;
   config: ChatProviderConfig;
   children?: ReactNode;
 }
@@ -289,7 +289,7 @@ export interface ChatProviderProps<S extends IChatService> {
  * @param {IStorage} storage
  * @constructor
  */
-export const ChatProvider = <S extends IChatService>({
+export const ChatProvider = <S extends IChatService, C = any, D = any>({
   serviceFactory,
   storage,
   config: {
@@ -299,7 +299,7 @@ export const ChatProvider = <S extends IChatService>({
     autoDraft = AutoDraft.Save | AutoDraft.Restore,
   },
   children,
-}: ChatProviderProps<S>): JSX.Element => {
+}: ChatProviderProps<S, C, D>): JSX.Element => {
   const [state, setState] = useState(storage.getState());
 
   const updateState = useCallback(() => {
