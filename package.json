@@ -55,7 +55,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "prop-types": "15.8.1",
