@@ -4,6 +4,7 @@ export interface MessageContent<MessageContentType> {
   content: unknown;
 }
 
+
 export interface TextContent
   extends MessageContent<MessageContentType.TextPlain> {
   content: string;
@@ -47,16 +48,16 @@ export interface KmlContent extends MessageContent<MessageContentType.Kml> {
 // - url/data url
 // - binary
 // If url is empty string it means that it's a binary image
-export interface AttachmentContent
-  extends MessageContent<MessageContentType.Attachment> {
-  url: string;
-  data: ArrayBuffer;
-}
+// export interface AttachmentContent
+//   extends MessageContent<MessageContentType.Attachment> {
+//   url: string;
+//   data: ArrayBuffer;
+// }
 
-export interface AttachmentListContent
-  extends MessageContent<MessageContentType.AttachmentList> {
-  content: AttachmentContent[];
-}
+// export interface AttachmentListContent
+//   extends MessageContent<MessageContentType.AttachmentList> {
+//   content: AttachmentContent[];
+// }
 
 // Attachments can be sent as
 // - url/data url
