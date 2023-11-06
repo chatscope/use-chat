@@ -1,5 +1,12 @@
 # @chatscope/use-chat changelog
 
+## [3.1.2](https://github.com/chatscope/use-chat/compare/v3.1.1...v3.1.2) (2023-09-27)
+
+
+### Bug Fixes
+
+* added missing MessageGroup export ([21bf7c9](https://github.com/chatscope/use-chat/commit/21bf7c9c7b1916dfe64c014faf78bb5a35dea848))
+
 ## [3.1.1](https://github.com/chatscope/use-chat/compare/v3.1.0...v3.1.1) (2023-01-18)
 
 
